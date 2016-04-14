@@ -1,4 +1,3 @@
-etsetse
 def sief_prime_generator(max_prime, known_primes=()):
     sief = [0]*max_prime
     for prime in sorted(known_primes):
