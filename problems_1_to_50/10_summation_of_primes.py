@@ -5,12 +5,16 @@ Find the sum of all the primes below two million.
 import sys
 import unittest
 
+from ..lib import prime_numbers
+
+
 def find_summation_of_primes_brute(max_prime):
-    pass 
+    primes = [x for x in prime_numbers.sief_prime_generator(max_prime) ] 
+    return sum(primes)
 
 def find_summation_of_primes_site(max_prime):
-    pass
-
+    primes = [x for x in prime_numbers.sief_prime_generator_site(max_prime)]
+    return sum(primes)
 
 def find_summation_of_primes(max_prime, algorithm='brute'):
     if algorithm=='brute':
@@ -27,7 +31,7 @@ class TestSummationOfPrimes(unittest.TestCase):
 
     def _test_template_solution(self, algorithm):
         pass
-#        self.assertEqual(find_summation_of_primes(1000, algorithm), 31875000)
+        self.assertEqual(find_summation_of_primes(2000000, algorithm), 142913828922)
 
     @unittest.expectedFailure
     def test_site_example(self):
